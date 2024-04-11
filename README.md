@@ -1,6 +1,6 @@
 # Uphar Gaur's Portfolio
 
-![Uphar Gaur's Portfolio](https://uphar.codersborn.today/)
+![Uphar Gaur's Portfolio](src/images/HeroImage.jpg)
 
 ## Introduction
 
