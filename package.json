@@ -1,7 +1,7 @@
 {
   "name": "uphar-portfolio",
   "version": "0.1.0",
-  "homepage": "https://uphrargaur.github.io",
+  "homepage": "https://uphargaur.github.io/",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
   }
 }
