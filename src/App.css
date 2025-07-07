@@ -1,41 +1,329 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Golden & Green Theme - Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  margin: 0px !important;
+* {
+  margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
-/* width */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0a0f0a;
+  color: #f5f5dc;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23d4af37" opacity="0.8"/><circle cx="10" cy="10" r="3" fill="%23ffd700"/></svg>'), auto;
+}
+
+/* Custom Selection */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 80px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a2e1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #d4af37 0%, #228b22 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #32cd32 100%);
+}
+
+/* Golden & Green Animations */
+@keyframes goldShimmer {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes greenPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(50, 205, 50, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.8);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  }
+}
+
+@keyframes leafFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% { 
+    transform: translateY(-10px) rotate(2deg);
+  }
+  66% { 
+    transform: translateY(5px) rotate(-2deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Utility Classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  animation: goldShimmer 2s infinite;
+}
+
+.green-pulse {
+  animation: greenPulse 2s infinite;
+}
+
+.gold-glow {
+  animation: goldGlow 3s infinite;
+}
+
+.leaf-float {
+  animation: leafFloat 4s infinite ease-in-out;
+}
+
+/* Golden Glass Morphism */
+.glass-morphism {
+  background: rgba(26, 46, 26, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+}
+
+.glass-morphism-light {
+  background: rgba(42, 74, 42, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(50, 205, 50, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(50, 205, 50, 0.1);
+}
+
+/* Golden Gradient Backgrounds */
+.gradient-bg-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+}
+
+.gradient-bg-secondary {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+}
+
+.gradient-bg-accent {
+  background: linear-gradient(135deg, #32cd32 0%, #90ee90 100%);
+}
+
+.gradient-bg-mixed {
+  background: linear-gradient(135deg, #d4af37 0%, #228b22 50%, #32cd32 100%);
+}
+
+/* Golden Text Effects */
+.gold-text {
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.green-text {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  border-color: rgba(212, 175, 55, 0.8);
+}
+
+/* Nature-inspired Decorative Elements */
+.nature-accent {
+  position: relative;
+}
+
+.nature-accent::before {
+  content: '🌿';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  animation: leafFloat 3s infinite ease-in-out;
+}
+
+.nature-accent::after {
+  content: '✨';
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  font-size: 16px;
+  animation: goldGlow 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background:#222A35;
+  .glass-morphism {
+    backdrop-filter: blur(10px);
   }
   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #575C66;
-    border-radius: 6px;
+  .hover-lift:hover {
+    transform: translateY(-3px);
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #626970;
+}
+
+/* Loading States */
+.loading-shimmer {
+  background: linear-gradient(90deg, #1a2e1a 25%, #2a4a2a 50%, #1a2e1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
   }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Focus States */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+/* Golden Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  color: #000000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(50, 205, 50, 0.4);
+}
